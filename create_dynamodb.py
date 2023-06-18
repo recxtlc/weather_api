@@ -31,5 +31,3 @@ class aws:
             else:
                 raise err
             
-aws().create_dynamodb_table()
-

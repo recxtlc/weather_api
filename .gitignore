@@ -1,2 +1,6 @@
 .chalice/deployments/
 .chalice/venv/
+.docker
+**/__pycache__
+__pycache__/
+.venv
