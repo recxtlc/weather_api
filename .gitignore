@@ -2,5 +2,6 @@
 .chalice/venv/
 .docker
 **/__pycache__
+utills/__pycache__
 __pycache__/
 .venv
