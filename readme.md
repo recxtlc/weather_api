@@ -30,7 +30,7 @@ Before running this project, ensure you have the following prerequisites:
 - Python 3.9.13 or greater
 - API key for the weather API [WEATHERSTACK](https://weatherstack.com)
 
-## Instalation
+## Installation
 
 1. Clone the repository:
 
@@ -78,3 +78,8 @@ Before running the API, you need to configure the following settings:
 - `GET /weather/{location}`: Retrieves the weather information for the specified location from weather API.
 - `POST /weather/{location}`: Add location data from weather API into DynamoDB.
 - `GET /weather_data/{location}`: Retrieves the weather information for the specified location from DynamoDB.
+
+# design decisions 
+- Decided to use docker instead of using moto, nice documentation about how to use the docker container can be found here [aws_local_dynamodb_setup](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html)
+# assumptions made during the development.
+- How to handle any error that occurs in the weather API, one issue found in their documentation, their error code is using internal error types such as 101 means `missing_access_key` while HTTP method status code 101 means `Switching Protocols`, this was a challenge and I ended up using 502 as status code to handle all errors that occur from the weather.
